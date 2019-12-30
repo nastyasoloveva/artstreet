@@ -75,5 +75,25 @@ router.get('/comments', (req, res) => {
     );
 });
 
+router.get('/also', (req, res) => {
+   var also = [ 
+       { 
+        "url": faker.image.nature() 
+       }, 
+
+       { 
+        "url": faker.image.nature() 
+       },
+
+       {
+        "url": faker.image.nature()
+       }
+    ];
+
+    res.render('also', 
+        {"also": also}
+    );
+});
+
 
 module.exports = router;
