@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Events into Minsk</title>
+<meta charset="utf-8">
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1></h1>
+<p><!--#echo var="DATE_LOCAL"--></p>
+<!--#include virtual="/app/cities"-->
+
+	<h3></h3>
+		<div id="well-known"/>
+	</div>
+
+	<h3></h3>
+	<!--#include virtual="/app/museums"-->
+
+	<h3></h3>
+	<!--#include virtual="/app/items"-->
+
+	<!--#include file="ads.html"-->
+	
+</body>
+<template id="template">
+  <div>
+  	  {{#each authors}}
+    	<span>{{name}}</span>
+      {{/each}}
+  </div>
+</template>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
+<script>
+	var template = document.getElementById('template').innerHTML;
+	var renderAuthors = Handlebars.compile(template);
+	document.getElementById('well-known').innerHTML = renderAuthors({authors: [{"name": "Da Vinchi"}]});
+</script>
+
+</body>
+</html>
