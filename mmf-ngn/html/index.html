@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <style>
     body {
+    	width: 80%;
+    	margin: 0 auto;
         font-family: Tahoma, Verdana, Arial, sans-serif;
     }
 
+    h1{
+    	text-align: center;
+    }
+
     .img{
-        width: 100px;
+        width: 150px;
     }
 </style>
 </head>
@@ -23,12 +29,16 @@
 
     <h2>Popular authors</h2>
     <div id="authors"></div>
+
+    <h2>See also</h2>
+    <p><a href="#">See our new resource:</a></p>
+    <!--#include virtual="/art/also"-->
     
 </body>
 <template id="template">
   <div>
       {{#each authors}}
-      	<p><a href="#">{{name}}</a></p>
+        <p><a href="#">{{name}}</a></p>
       {{/each}}
   </div>
 </template>
