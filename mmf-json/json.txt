@@ -1,0 +1,65 @@
+object = [ 
+       { 
+        "url": "...",
+        "date": faker.date.past(),
+        "location": faker.address.latitude() + ' ' + faker.address.longitude(),
+        "author": faker.name.findName()
+       }, 
+
+       { 
+        "url": "https://zagge.ru/wp-content/uploads/2017/01/Eduardo_Kobra-14.jpg",
+        "date": faker.date.past(),
+        "location": faker.address.latitude() + ' ' + faker.address.longitude(),
+        "author": faker.name.findName() 
+       },
+
+       {
+        "url": "...",
+        "date": faker.date.past(),
+        "location": faker.address.latitude() + ' ' + faker.address.longitude(),
+        "author": faker.name.findName()
+       }
+    ];
+ comments = [ 
+       { 
+        "user": faker.internet.userName(),
+        "comment": faker.lorem.sentence() 
+       }, 
+
+       { 
+        "user": faker.internet.userName(),
+        "comment": faker.lorem.sentence() 
+       },
+
+       {
+        "user": faker.internet.userName(),
+        "comment": faker.lorem.sentence()
+       }
+    ];
+
+also = [ 
+       { 
+        "url": faker.image.nature() 
+       }, 
+
+       { 
+        "url": faker.image.nature() 
+       },
+
+       {
+        "url": faker.image.nature()
+       }
+    ];
+ district = [ 
+       { 
+        "name": faker.address.state()
+       }, 
+
+       { 
+        "name": faker.address.state() 
+       },
+
+       {
+        "name": faker.address.state()
+       }
+    ];
