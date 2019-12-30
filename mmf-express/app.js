@@ -10,8 +10,7 @@ const bodyParser = require('body-parser');
 const exphbs  = require('express-handlebars');
 
 const routes = require('./routes/index');
-const approutes = require('./routes/app');
-const api = require('./routes/api');
+const artroutes = require('./routes/art');
 
 const app = express();
 
@@ -37,9 +36,8 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/events', routes);
-app.use('/api/v1', api);
-app.use('/app', approutes);
+
+app.use('/art', artroutes);
 
 
 /// catch 404 and forward to error handler
