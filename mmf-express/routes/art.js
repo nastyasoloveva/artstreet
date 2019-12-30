@@ -28,14 +28,14 @@ router.get('/object', (req, res) => {
        { 
         "url": "https://myslo.ru/Content/BlogArticle/c6/26/c626188e-0630-4611-adc7-507dc28f9f1c_1.jpg",
         "date": faker.date.past(),
-        "location": faker.address.latitude() + '' + faker.address.longitude(),
+        "location": faker.address.latitude() + ' ' + faker.address.longitude(),
         "author": faker.name.findName()
        }, 
 
        { 
         "url": "https://zagge.ru/wp-content/uploads/2017/01/Eduardo_Kobra-14.jpg",
         "date": faker.date.past(),
-        "location": faker.address.latitude() + '' + faker.address.longitude(),
+        "location": faker.address.latitude() + ' ' + faker.address.longitude(),
         "author": faker.name.findName() 
        },
 
@@ -49,6 +49,29 @@ router.get('/object', (req, res) => {
 
     res.render('object', 
         {"object": object}
+    );
+});
+
+router.get('/comments', (req, res) => {
+   var comments = [ 
+       { 
+        "user": faker.internet.userName(),
+        "comment": faker.lorem.sentence() 
+       }, 
+
+       { 
+        "user": faker.internet.userName(),
+        "comment": faker.lorem.sentence() 
+       },
+
+       {
+        "user": faker.internet.userName(),
+        "comment": faker.lorem.sentence()
+       }
+    ];
+
+    res.render('comments', 
+        {"comments": comments}
     );
 });
 
