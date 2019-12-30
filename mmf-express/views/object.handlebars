@@ -1,0 +1,15 @@
+<table cellpadding = 10>
+	<tr>
+		<th>Дата создания</th>
+		<th>Координаты</th>
+		<th>Автор</th>
+	</tr>
+
+	{{#each object}}
+	<tr>
+		<td>{{date}}</td>
+		<td>{{location}}</td>
+		<td>{{author}}</td>
+	</tr>	
+	{{/each}}
+</table>
