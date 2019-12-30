@@ -7,7 +7,7 @@
     body {
         font-family: Tahoma, Verdana, Arial, sans-serif;
     }
-    
+
     .img{
         width: 100px;
     }
@@ -20,23 +20,26 @@
     
     <h2>Art objects</h2>
     <!--#include virtual="/art/object"-->
+
+    <h2>Popular authors</h2>
+    <div id="authors"></div>
     
 </body>
 <template id="template">
   <div>
-      {{#each photo}}
-        <img class="img" src="{{url}}"/>
+      {{#each authors}}
+      	<p><a href="#">{{name}}</a></p>
       {{/each}}
   </div>
 </template>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
 <script>
     var template = document.getElementById('template').innerHTML;
-    var renderPhoto = Handlebars.compile(template);
-    document.getElementById('photo').innerHTML = renderPhoto({photo: [
-        {"url": "https://myslo.ru/Content/BlogArticle/c6/26/c626188e-0630-4611-adc7-507dc28f9f1c_1.jpg"},
-        {"url": "https://zagge.ru/wp-content/uploads/2017/01/Eduardo_Kobra-14.jpg"},
-        {"url": "https://cs7.pikabu.ru/post_img/big/2018/04/15/6/1523783544117659603.jpg"}
+    var renderAuthors = Handlebars.compile(template);
+    document.getElementById('authors').innerHTML = renderAuthors({authors: [
+        {"name": "Banksy"},
+        {"name": "Stash"},
+        {"name": "Obay"}
         ]
     });
 </script>
